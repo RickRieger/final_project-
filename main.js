@@ -48,8 +48,6 @@ function displayRecipesAndIngredients(recipes){
 // API Fetches!
 async function getRecipes(){
     
-
-
     if(mealType !== ''){
         console.log('1')
         const response = await fetch(`https://api.edamam.com/search?q=${searchValue}
@@ -58,7 +56,7 @@ async function getRecipes(){
         isLoading=false;
         return data;
     };
-    if(regionValue === undefined || regionValue === ''){
+    if(regionValue === ''){
         console.log('2')
         const response = await fetch(`https://api.edamam.com/search?q=${searchValue}
         &app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=${num1}&to=${num2}`);
@@ -143,8 +141,9 @@ document.getElementById('button-search').addEventListener('click', ()=>{
 
 // Region-link event-handler
 $('#region-link').click(()=>{
-    $('.loader').css('display','none');
+    loading.removeClass('show');
     $('#results-container').empty();
+    $('#meal-type-section').css('display','none');
     $('#results-section').css('display', 'none')
     $('#welcome-section').css('display','none');
     $('#myCarousel').css('display','block'); 
@@ -172,6 +171,7 @@ for (const button of regionValueSubmitButtons){
 
 // meal-type link event-handler
 $('#meal-type-link').click(()=>{
+    loading.removeClass('show');
     $('.loader').css('display','none');
     $('#results-container').empty();
     $('#results-section').css('display', 'none');
