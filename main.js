@@ -1,4 +1,4 @@
-// can use 'git-ignore' to save things like API keys as to avoid it being on git hub
+// Use 'git-ignore' to save things like API keys and avoid it being pushed to git hub
 const YOUR_APP_ID = '690f49ff';
 let YOUR_APP_KEY = '';
 // variables for fetching recipes
@@ -80,7 +80,7 @@ async function showRecipes(){
     displayRecipesAndIngredients(recipes);
 };
 
-
+// Shows animation and fetches data via API on a setTimeout
 function showLoading(){
     loading.addClass('show');
     setTimeout(()=>{
