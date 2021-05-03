@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="style.css">
+    <title>App-etizing Recipes</title>
+</head>
+
+<body>
+    
+    <div class="header">
+        <a href="index.html" class="logo"><img id="logo" src="images/appetizing-logo.png" alt="logo"></a>
+        <div id="menu">
+            <div>
+                <input type="text" id="search" placeholder="Search.." name="search">
+                <button id="button-search"><i class="fa fa-search"></i></button>
+                <a class="active" href="#home"><i class="fas fa-user" style="color:#00bdb7"></i></a>
+            </div>
+            <div id="links">
+                <a id="region-link" href="#">by region</a>&nbsp;
+                <a id="meal-type-link" href="#">meal-type</a>&nbsp;
+                <a id="dish-type-link" href="#">dish-type</a>&nbsp;
+            </div>
+        </div>   
+    </div>
+    
+    <div id="welcome-section">
+        <h3>Welcome to the world's best recipe finder, 
+            <br>
+            <br>
+            (When it works)
+            <br>
+            <br>
+            <center><span id="logo-font">App-etizing </span><span id="logo-font2">recipes&nbsp;&#169;</span></h3></center> 
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type="text" id="API" placeholder="API-key.." name="API-key">
+
+        </div>
+        
+        <!-- Bootstrap carousel and region section -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+            <h2 id="region-header" class= "">Select a region to explore!</h2> 
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="carousel-image"src="images/mexico.webp" alt="China">
+                    <div class="carousel-caption">
+                        <h3>Mexican Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="mexican-button" class="region-buttons" value = "Mexican">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/france.webp"  alt="Chicago">
+                    <div class="carousel-caption">
+                        <h3>French Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="french-button" class="region-buttons" value = "French">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/america.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>American Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="american-button" class="region-buttons" value ="American">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/asia.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Asian Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="asian-button" class="region-buttons" value ="Asian">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/british.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>British Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="british-button" class="region-buttons" value ="British">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/Caribbean.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Caribbean Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="caribbean-button" class="region-buttons" value ="Caribbean">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/central-europe.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Central European Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="central-europe-button" class="region-buttons" value ="Central%20Europe">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/chinese.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Chinese Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="chinese-button" class="region-buttons" value ="Chinese">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/eastern-europe.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Eastern Europe Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="eastern-europe-button" class="region-buttons" value ="Eastern%20Europe">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/indian.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Indian Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="indian-button" class="region-buttons" value ="Indian">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/italian.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Italian Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="italian-button" class="region-buttons" value ="Italian">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/japan.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Japanese Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="japanese-button" class="region-buttons" value ="Japanese">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/kosher.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Kosher Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="kosher-button" class="region-buttons" value ="Kosher">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/mediterranean.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>mediterranean Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="mediterranean-button" class="region-buttons" value ="Mediterranean">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/middle-eastern.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Middle Eastern Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="middle-eastern-button" class="region-buttons" value ="Middle%20Eastern">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/british.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>British cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="british-button" class="region-buttons" value ="British">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/nordic.webp" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Nordic Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="nordic-button" class="region-buttons" value ="Nordic">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/south-america.webp" alt="south-american">
+                    <div class="carousel-caption">
+                        <h3>South American Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="south-american-button" class="region-buttons" value ="South%20American">select</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="carousel-image"src="images/south-east-asia.webp" alt="asia">
+                    <div class="carousel-caption">
+                        <h3>South East Asian Cuisine</h3>
+                    </div>
+                    <div class="carousel-caption-2">
+                        <button id ="south-east-asian-button" class="region-buttons" value ="South%20East%20Asian">select</button>
+                    </div>
+                </div>
+            </div> 
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> 
+        
+        
+        <!-- Dish-type section -->
+        <div id="dish-type-section">
+            <select name="dish-type" id="dish-type">
+                <option value="Alcohol-cocktail">Alcohol and cocktails</option>
+                <option value="Biscuits%20and%20cookies">Biscuits and cookies</option>
+                <option value="Bread">Bread</option>
+                <option value="Cereals">Cereals</option>
+                <option value="Condiments%20and%20sauces">Condiments and sauces</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Desserts">Desserts</option>
+                <option value="Egg">Eggs</option>
+                <option value="Main$20course">Main course</option>
+                <option value="Omelet">Omelet</option>
+                <option value="Pancake">Pancakes</option>
+                <option value="Preps">Preps</option>
+                <option value="Preserve">Preserves</option>
+                <option value="Salad">Salads</option>
+                <option value="Sandwiches">Sandwiches</option>
+                <option value="Soup">Soups</option>
+                <option value="Starter">Starters</option>
+            </select>
+            <button id="button-dish-type">go</button>
+            <button id="button-skip-dish">skip this step</button>
+        </div>
+        
+        
+        <!-- Meal-type section -->
+        <div id="meal-type-section">
+            <select name="meal-type" id="meal-type">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snack">Snack</option>
+                <option value="Teatime">Tea time</option>
+            </select>
+            <button id="button-meal-type">select</button>
+            <button id="button-skip-step-meal">skip this step</button>
+        </div>
+        
+        <!-- Search and API section -->
+        <!-- <div id="search-section2">
+            <form action="#">
+                <h2>Type your additional search criteria</h2>
+                <h3>i.e. "Chicken", "Beef", "Pizza", "Vegetarian", or Anything you desire &#128522;</h3>
+                <input type="text" id="search" name="search"><br>
+                <label for="APIKEY">Additional Search</label><br>
+                <input type="text" id="API-KEY" name="APIKEY"><br>
+                <label for="APIKEY">API-KEY</label><br>
+                <button id="button-get-recipes">submit</button>
+            </form> 
+        </div> -->
+        
+        
+        <!-- Recipe results section and page-loader -->
+        <div id="results-section">
+            <div id="results-container">
+            </div>
+        </div>
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div> 
+        <img id="ademam-logo"src="images/transparent.png" alt="logo">
+        <script src = "main.js"></script>
+    </body>
+    </html>
