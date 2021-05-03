@@ -55,7 +55,7 @@
 }
 
 select{
-    margin-top:100px;
+    margin-top:200px;
     display: flex;
     flex-direction: column;
     width:80%;
@@ -120,7 +120,7 @@ body{
     z-index: 1;
     background-color:#d3fcfcf7;
     position: fixed;
-    height:100px;
+    height:130px;
     display: inline-flex;
     text-align: center;
     align-items: center;
@@ -238,6 +238,7 @@ hr{
     flex-direction: column;
     align-items: center;
     background-color: #edfdfd;
+    margin-top:50px;
     
 }
 .pic{

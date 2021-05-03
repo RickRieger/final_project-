@@ -14,7 +14,8 @@ const loading = $('.loader');
 let regionValue = '';
 // variable to hold an array of region buttons
 const regionValueSubmitButtons = $('.region-buttons');
-
+// variable to hold meal-type value
+let mealType = '';
 
 // Display ingredients to the DOM.
 function displayRecipesAndIngredients(recipes){
@@ -47,20 +48,34 @@ function displayRecipesAndIngredients(recipes){
 // API Fetches!
 async function getRecipes(){
     
+
+
+    if(mealType !== ''){
+        console.log('1')
+        const response = await fetch(`https://api.edamam.com/search?q=${searchValue}
+        &app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=${num1}&to=${num2}&mealType=${mealType}`);
+        const data = await response.json();
+        isLoading=false;
+        return data;
+    };
     if(regionValue === undefined || regionValue === ''){
+        console.log('2')
         const response = await fetch(`https://api.edamam.com/search?q=${searchValue}
         &app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=${num1}&to=${num2}`);
         const data = await response.json();
         isLoading = false;
         return data;
     };
-    if(regionValue !== undefined || regionValue !== ''){
+    if(regionValue !== ''){
+        console.log('3')
         const response = await fetch(`https://api.edamam.com/search?q=${searchValue}
         &app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=${num1}&to=${num2}&cuisineType=${regionValue}`);
         const data = await response.json();
         isLoading=false;
         return data;
     };
+
+
 };
 
 // asynchronous function to show recipes
@@ -76,7 +91,7 @@ async function showRecipes(){
         recipes.push(result.recipe);
     });
     console.log(recipes);
-
+    
     displayRecipesAndIngredients(recipes);
 };
 
@@ -87,7 +102,7 @@ function showLoading(){
         loading.removeClass('show');
         
         setTimeout(()=>{
-           
+            
             showRecipes();
             
         } ,100);
@@ -131,7 +146,6 @@ $('#region-link').click(()=>{
     $('.loader').css('display','none');
     $('#results-container').empty();
     $('#results-section').css('display', 'none')
-
     $('#welcome-section').css('display','none');
     $('#myCarousel').css('display','block'); 
 });
@@ -155,6 +169,34 @@ for (const button of regionValueSubmitButtons){
         
     });
 };
+
+// meal-type link event-handler
+$('#meal-type-link').click(()=>{
+    $('.loader').css('display','none');
+    $('#results-container').empty();
+    $('#results-section').css('display', 'none');
+    $('#welcome-section').css('display','none');
+    $('#myCarousel').css('display','none'); 
+    $('#meal-type-section').css('display','block'); 
+});
+
+
+// meal-type event-handler
+$('#button-meal-type').click(()=>{
+    mealType = $('#meal-type').val();
+    console.log(mealType)
+    searchValue = $('#search').val();
+    searchValue = searchValue.replace(' ' ,'%20');
+    console.log(searchValue);
+    if(searchValue === ''){
+        alert('please enter a specific value in the search field');
+        return;
+    };
+    $('#meal-type-section').css('display', 'none');
+    $('#results-section').css('display', 'flex');
+    showRecipes();
+});
+
 
 
 
