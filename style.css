@@ -12,12 +12,12 @@
     position: fixed;
     width: 160px;
     height: 36px;
-    margin-top: 640px;
+    margin-top: 660px;
     margin-left: 0px;
     
 }
 #search{
-    width:215px;
+    width:180px;
     border-radius: 5px;
 }
 #API{
@@ -120,7 +120,7 @@ body{
     z-index: 1;
     background-color:#d3fcfcf7;
     position: fixed;
-    height:180px;
+    height:160px;
     display: inline-flex;
     text-align: center;
     align-items: center;
@@ -209,6 +209,8 @@ a:active{
     display: flex;
     flex-direction: column;
     font-size: 2rem;
+    justify-content: space-between;
+    align-content: space-between;
     
 }
 #links{
@@ -273,7 +275,7 @@ li{
     margin-top: 50px;
     display:none;
     justify-content:center;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 .loader.show{
     opacity: 1;
