@@ -22,7 +22,7 @@
 }
 #API{
     position:fixed;
-    margin-top:450px;
+    margin-top:300px;
     
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -120,7 +120,7 @@ body{
     z-index: 1;
     background-color:#d3fcfcf7;
     position: fixed;
-    height:130px;
+    height:180px;
     display: inline-flex;
     text-align: center;
     align-items: center;
