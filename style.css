@@ -141,8 +141,8 @@ body {
   display: none;
 }
 .carousel-inner > .item > img {
+  height:280px;
   width: 100%;
-
   border-radius: 20px;
   margin: auto;
   border: 1px solid grey;
